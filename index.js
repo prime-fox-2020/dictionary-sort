@@ -23,6 +23,17 @@ function dictionarySort(dictionaries) {
   }
   let result = dictionaries.join(',')
   return result
+  //tanpa built-in
+  // let result = ''
+  // for(let i = 0; i < dictionaries.length; i++){
+  //   if(i < dictionaries.length-1){
+  //     result += dictionaries[i] + ','
+  //   }
+  //   else{
+  //     result += dictionaries[i]
+  //   }
+  // }
+  // return result
 }
 
 var arrOfWord = ['makan', 'duduk', 'tidur', 'terbang']
