@@ -1,13 +1,16 @@
 function dictionarySort(dictionaries) {
   // your code below here...
   for(let i = 0; i < dictionaries.length; i++){
-    for(let j = 0; j < dictionaries.length - i - 1; j++){
-      if(dictionaries[j] > dictionaries[j+1]){
-        let tmp = dictionaries[j]
-        dictionaries[j] = dictionaries[j+1]
-        dictionaries[j+1] = tmp
+    let indexOfMin = i
+    for(let j = i + 1; j < dictionaries.length; j++){ //mencari index dari nilai minimum
+      if(dictionaries[j] < dictionaries[indexOfMin]){
+        indexOfMin = j
       }
     }
+    //di-swap nilai minimum dipindahin ke index i
+    let tmp = dictionaries[i]
+    dictionaries[i] = dictionaries[indexOfMin]
+    dictionaries[indexOfMin] = tmp
   }
 
   let output = ''
