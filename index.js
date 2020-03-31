@@ -1,34 +1,28 @@
 function dictionarySort(dictionaries) {
   for(let i = 0; i < dictionaries.length; i++){
-    let len = dictionaries[i].length
     let swap = dictionaries[i]
+    let len = dictionaries[i].length
     let index = i
-
     for(let j = i+1; j < dictionaries.length; j++){
-      let temp = dictionaries[j].length
-
-      if(dictionaries[i][0] > dictionaries[j][0] || (temp > len && dictionaries[i][0] == dictionaries[j][0])){ 
-        len = dictionaries[j].length
+      if(dictionaries[i][0] > dictionaries[j][0]){ 
         swap = dictionaries[j]
         index = j
       }
-      else if(len == temp && dictionaries[i][0] == dictionaries[j][0]){
-        for(let k = 1; k < temp; k++){
+      else if(dictionaries[i][0] == dictionaries[j][0]){
+        for(let k = 1; k < len; k++){
           if(dictionaries[i][k] > dictionaries[j][k]){
-            len = dictionaries[j].length
             swap = dictionaries[j]
             index = j
             break
           }
         }
       }
-      
-
     }
     dictionaries[index] = dictionaries[i]
     dictionaries[i] = swap
   }
-  return dictionaries
+  let result = dictionaries.join(',')
+  return result
 }
 
 var arrOfWord = ['makan', 'duduk', 'tidur', 'terbang']
